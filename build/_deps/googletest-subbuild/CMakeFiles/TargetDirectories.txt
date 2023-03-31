@@ -1,0 +1,3 @@
+/home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir
+/home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
+/home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir

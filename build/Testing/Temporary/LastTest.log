@@ -1,0 +1,111 @@
+Start testing: Mar 31 12:41 EAT
+----------------------------------------------------------
+1/4 Testing: BufferTest.CreateBuffer
+1/4 Test: BufferTest.CreateBuffer
+Command: "/home/mutuma/embedded_systems/ring-buffer/build/RingBuffer" "--gtest_filter=BufferTest.CreateBuffer" "--gtest_also_run_disabled_tests"
+Directory: /home/mutuma/embedded_systems/ring-buffer/build
+"BufferTest.CreateBuffer" start time: Mar 31 12:41 EAT
+Output:
+----------------------------------------------------------
+Running main() from /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BufferTest.CreateBuffer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BufferTest
+[ RUN      ] BufferTest.CreateBuffer
+[       OK ] BufferTest.CreateBuffer (0 ms)
+[----------] 1 test from BufferTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BufferTest.CreateBuffer" end time: Mar 31 12:41 EAT
+"BufferTest.CreateBuffer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: BufferTest.WriteBuffer
+2/4 Test: BufferTest.WriteBuffer
+Command: "/home/mutuma/embedded_systems/ring-buffer/build/RingBuffer" "--gtest_filter=BufferTest.WriteBuffer" "--gtest_also_run_disabled_tests"
+Directory: /home/mutuma/embedded_systems/ring-buffer/build
+"BufferTest.WriteBuffer" start time: Mar 31 12:41 EAT
+Output:
+----------------------------------------------------------
+Running main() from /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BufferTest.WriteBuffer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BufferTest
+[ RUN      ] BufferTest.WriteBuffer
+[       OK ] BufferTest.WriteBuffer (0 ms)
+[----------] 1 test from BufferTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BufferTest.WriteBuffer" end time: Mar 31 12:41 EAT
+"BufferTest.WriteBuffer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/4 Testing: BufferTest.ReadBuffer
+3/4 Test: BufferTest.ReadBuffer
+Command: "/home/mutuma/embedded_systems/ring-buffer/build/RingBuffer" "--gtest_filter=BufferTest.ReadBuffer" "--gtest_also_run_disabled_tests"
+Directory: /home/mutuma/embedded_systems/ring-buffer/build
+"BufferTest.ReadBuffer" start time: Mar 31 12:41 EAT
+Output:
+----------------------------------------------------------
+Running main() from /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BufferTest.ReadBuffer
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BufferTest
+[ RUN      ] BufferTest.ReadBuffer
+[       OK ] BufferTest.ReadBuffer (0 ms)
+[----------] 1 test from BufferTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BufferTest.ReadBuffer" end time: Mar 31 12:41 EAT
+"BufferTest.ReadBuffer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: BufferTest.WriteAfterRead
+4/4 Test: BufferTest.WriteAfterRead
+Command: "/home/mutuma/embedded_systems/ring-buffer/build/RingBuffer" "--gtest_filter=BufferTest.WriteAfterRead" "--gtest_also_run_disabled_tests"
+Directory: /home/mutuma/embedded_systems/ring-buffer/build
+"BufferTest.WriteAfterRead" start time: Mar 31 12:41 EAT
+Output:
+----------------------------------------------------------
+Running main() from /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BufferTest.WriteAfterRead
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BufferTest
+[ RUN      ] BufferTest.WriteAfterRead
+[       OK ] BufferTest.WriteAfterRead (0 ms)
+[----------] 1 test from BufferTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BufferTest.WriteAfterRead" end time: Mar 31 12:41 EAT
+"BufferTest.WriteAfterRead" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 31 12:41 EAT

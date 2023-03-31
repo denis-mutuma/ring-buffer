@@ -1,0 +1,5 @@
+if(EXISTS "/home/mutuma/embedded_systems/ring-buffer/build/RingBuffer[1]_tests.cmake")
+  include("/home/mutuma/embedded_systems/ring-buffer/build/RingBuffer[1]_tests.cmake")
+else()
+  add_test(RingBuffer_NOT_BUILT RingBuffer_NOT_BUILT)
+endif()

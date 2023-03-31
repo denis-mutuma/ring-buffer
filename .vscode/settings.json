@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "ring_buffer.h": "c",
+        "stdint.h": "c",
+        "ostream": "cpp",
+        "cstddef": "cpp"
+    }
+}

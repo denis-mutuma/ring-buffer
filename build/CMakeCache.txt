@@ -195,7 +195,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=RingBuffer
+CMAKE_PROJECT_NAME:STATIC=RingBufferTest
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=1.12.1
@@ -303,6 +303,12 @@ GTEST_HAS_ABSL:BOOL=OFF
 INSTALL_GTEST:BOOL=ON
 
 //Value Computed by CMake
+RingBufferTest_BINARY_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer/build
+
+//Value Computed by CMake
+RingBufferTest_SOURCE_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer
+
+//Value Computed by CMake
 RingBuffer_BINARY_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer/build
 
 //Value Computed by CMake
@@ -353,6 +359,12 @@ gtest_hide_internal_symbols:BOOL=OFF
 
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
+
+//Value Computed by CMake
+ring_buffer_BINARY_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer/build
+
+//Value Computed by CMake
+ring_buffer_SOURCE_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer
 
 
 ########################

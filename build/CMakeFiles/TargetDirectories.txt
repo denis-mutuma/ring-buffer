@@ -1,11 +1,11 @@
+/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/install/strip.dir
 /home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/install/local.dir
 /home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/install.dir
 /home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/list_install_components.dir
 /home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/rebuild_cache.dir
 /home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/edit_cache.dir
 /home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/test.dir
-/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/install/strip.dir
-/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/RingBuffer.dir
+/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/RingBufferTest.dir
 /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-build/CMakeFiles/install/strip.dir
 /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-build/CMakeFiles/install/local.dir
 /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-build/CMakeFiles/install.dir

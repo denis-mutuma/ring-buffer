@@ -5,69 +5,73 @@ extern "C"
 #include "../include/ring_buffer.h"
 }
 
-TEST(BufferTest, CreateBuffer)
+class RingBufferTest : public ::testing::Test
 {
-    Ring_Buffer *buff = createBuffer(3);
-    EXPECT_EQ(buff->isFull, 0);
-    EXPECT_EQ(isEmpty(buff), 1);
-    EXPECT_EQ(buff->head, 0);
-    EXPECT_EQ(buff->tail, 0);
+protected:
+    void SetUp() override
+    {
+        InitBuffer(&buffer, data, 3);
+    }
+
+    // void TearDown() override {}
+
+    RingBuffer buffer;
+    RingBufferValue result;
+    uint8_t data[3];
+};
+
+TEST_F(RingBufferTest, TestInitBuffer)
+{
+    ReadBuffer(&buffer, &result);
+    EXPECT_EQ(result.is_valid, false);
+    EXPECT_EQ(result.value, 0);
+    EXPECT_EQ(IsBufferFull(&buffer), false);
+    EXPECT_EQ(IsBufferEmpty(&buffer), true);
+    EXPECT_EQ(GetBufferLength(&buffer), 0);
+    EXPECT_EQ(GetReadIndex(&buffer), 0);
+    EXPECT_EQ(GetWriteIndex(&buffer), 0);
+    EXPECT_EQ(buffer.head, 0);
+    EXPECT_EQ(buffer.tail, 0);
 }
 
-TEST(BufferTest, WriteBuffer)
+TEST_F(RingBufferTest, TestWriteBuffer)
 {
-    Ring_Buffer *buff = createBuffer(3);
-    push(buff, 10);
-    push(buff, 20);
-    push(buff, 30);
-    EXPECT_EQ(isFull(buff), 1);
-    EXPECT_EQ(isEmpty(buff), 0);
-    EXPECT_EQ(buff->tail, 0);
-    EXPECT_EQ(buff->head, 0);
+    EXPECT_EQ(WriteBuffer(&buffer, 10), true);
+    EXPECT_EQ(WriteBuffer(&buffer, 20), true);
+    EXPECT_EQ(WriteBuffer(&buffer, 30), true);
+    EXPECT_EQ(GetBufferLength(&buffer), 3);
+    EXPECT_EQ(GetReadIndex(&buffer), 0);
+    EXPECT_EQ(GetWriteIndex(&buffer), 2);
+    EXPECT_EQ(WriteBuffer(&buffer, 40), false);
+    EXPECT_EQ(GetWriteIndex(&buffer), 2);
+    EXPECT_EQ(IsBufferFull(&buffer), true);
+    EXPECT_EQ(IsBufferEmpty(&buffer), false);
 }
 
-TEST(BufferTest, ReadBuffer)
+TEST_F(RingBufferTest, TestReadBuffer)
 {
-    Ring_Buffer *buff = createBuffer(3);
-    push(buff, 10);
-    push(buff, 20);
-    push(buff, 30);
-    EXPECT_EQ(isFull(buff), 1);
-    EXPECT_EQ(isEmpty(buff), 0);
-    EXPECT_EQ(buff->tail, 0);
-    EXPECT_EQ(buff->head, 0);
+    ReadBuffer(&buffer, &result);
+    EXPECT_EQ(result.is_valid, true);
+    EXPECT_EQ(result.value, 10);
+    EXPECT_EQ(GetBufferLength(&buffer), 2);
+    EXPECT_EQ(GetReadIndex(&buffer), 1);
+    EXPECT_EQ(GetWriteIndex(&buffer), 2);
 
-    EXPECT_EQ(pop(buff), 10);
-    EXPECT_EQ(buff->tail, 1);
-    EXPECT_EQ(isFull(buff), 0);
-    EXPECT_EQ(isEmpty(buff), 0);
+    ReadBuffer(&buffer, &result);
+    EXPECT_EQ(result.is_valid, true);
+    EXPECT_EQ(result.value, 20);
+
+    ReadBuffer(&buffer, &result);
+    EXPECT_EQ(result.is_valid, true);
+    EXPECT_EQ(result.value, 30);
+
+    EXPECT_EQ(IsBufferEmpty(&buffer), true);
+    EXPECT_EQ(IsBufferFull(&buffer), false);
+
+    ReadBuffer(&buffer, &result);
+    EXPECT_EQ(result.is_valid, false);
+    EXPECT_EQ(result.value, 0);
+
+    EXPECT_EQ(IsBufferEmpty(&buffer), true);
+    EXPECT_EQ(IsBufferFull(&buffer), false);
 }
-
-TEST(BufferTest, WriteAfterRead)
-{
-    Ring_Buffer *buff = createBuffer(3);
-    push(buff, 10);
-    push(buff, 20);
-    push(buff, 30);
-    EXPECT_EQ(isFull(buff), 1);
-    EXPECT_EQ(isEmpty(buff), 0);
-    EXPECT_EQ(buff->tail, 0);
-    EXPECT_EQ(buff->head, 0);
-
-    EXPECT_EQ(pop(buff), 10);
-    EXPECT_EQ(buff->tail, 1);
-    EXPECT_EQ(isFull(buff), 0);
-    EXPECT_EQ(isEmpty(buff), 0);
-
-    push(buff, 40);
-    EXPECT_EQ(isFull(buff), 1);
-    EXPECT_EQ(isEmpty(buff), 0);
-    EXPECT_EQ(buff->tail, 1);
-    EXPECT_EQ(buff->head, 1);
-}
-
-// int main(int argc, char **argv)
-// {
-//     testing::InitGoogleTest(&argc, argv);
-//     return RUN_ALL_TESTS();
-// }

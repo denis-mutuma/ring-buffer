@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "RingBuffer"
+			"path" : "RingBufferTest"
 		}
 	],
 	"backtrace" : 1,
@@ -128,7 +128,7 @@
 			"id" : "gtest::@1ea2dfc0605fe3ab2a3f"
 		}
 	],
-	"id" : "RingBuffer::@6890427a1f51a3e7e1df",
+	"id" : "RingBufferTest::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -153,8 +153,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "RingBuffer",
-	"nameOnDisk" : "RingBuffer",
+	"name" : "RingBufferTest",
+	"nameOnDisk" : "RingBufferTest",
 	"paths" : 
 	{
 		"build" : ".",

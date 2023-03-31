@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/RingBufferTest.dir/test/test.cpp.o CMakeFiles/RingBufferTest.dir/src/ring_buffer.c.o -o RingBufferTest  lib/libgtest_main.a lib/libgtest.a 

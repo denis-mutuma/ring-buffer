@@ -2,4 +2,8 @@ BufferTest.CreateBuffer 9 0.000314233
 BufferTest.WriteBuffer 9 0.000289344
 BufferTest.ReadBuffer 9 0.000292
 BufferTest.WriteAfterRead 7 0.000429757
+RingBufferTest.TestInitBuffer 14 0.000157214
+RingBufferTest.TestWriteBuffer 12 0.000192675
+RingBufferTest.TestReadBuffer 0 0
 ---
+RingBufferTest.TestReadBuffer

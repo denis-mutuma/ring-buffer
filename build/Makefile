@@ -65,6 +65,18 @@ CMAKE_BINARY_DIR = /home/mutuma/embedded_systems/ring-buffer/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -128,18 +140,6 @@ test:
 test/fast: test
 .PHONY : test/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles /home/mutuma/embedded_systems/ring-buffer/build//CMakeFiles/progress.marks
@@ -172,17 +172,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RingBuffer
+# Target rules for targets named RingBufferTest
 
 # Build rule for target.
-RingBuffer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RingBuffer
-.PHONY : RingBuffer
+RingBufferTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RingBufferTest
+.PHONY : RingBufferTest
 
 # fast build rule for target.
-RingBuffer/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBuffer.dir/build.make CMakeFiles/RingBuffer.dir/build
-.PHONY : RingBuffer/fast
+RingBufferTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBufferTest.dir/build.make CMakeFiles/RingBufferTest.dir/build
+.PHONY : RingBufferTest/fast
 
 #=============================================================================
 # Target rules for targets named gmock_main
@@ -241,7 +241,7 @@ src/ring_buffer.o: src/ring_buffer.c.o
 
 # target to build an object file
 src/ring_buffer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBuffer.dir/build.make CMakeFiles/RingBuffer.dir/src/ring_buffer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBufferTest.dir/build.make CMakeFiles/RingBufferTest.dir/src/ring_buffer.c.o
 .PHONY : src/ring_buffer.c.o
 
 src/ring_buffer.i: src/ring_buffer.c.i
@@ -249,7 +249,7 @@ src/ring_buffer.i: src/ring_buffer.c.i
 
 # target to preprocess a source file
 src/ring_buffer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBuffer.dir/build.make CMakeFiles/RingBuffer.dir/src/ring_buffer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBufferTest.dir/build.make CMakeFiles/RingBufferTest.dir/src/ring_buffer.c.i
 .PHONY : src/ring_buffer.c.i
 
 src/ring_buffer.s: src/ring_buffer.c.s
@@ -257,7 +257,7 @@ src/ring_buffer.s: src/ring_buffer.c.s
 
 # target to generate assembly for a file
 src/ring_buffer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBuffer.dir/build.make CMakeFiles/RingBuffer.dir/src/ring_buffer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBufferTest.dir/build.make CMakeFiles/RingBufferTest.dir/src/ring_buffer.c.s
 .PHONY : src/ring_buffer.c.s
 
 test/test.o: test/test.cpp.o
@@ -265,7 +265,7 @@ test/test.o: test/test.cpp.o
 
 # target to build an object file
 test/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBuffer.dir/build.make CMakeFiles/RingBuffer.dir/test/test.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBufferTest.dir/build.make CMakeFiles/RingBufferTest.dir/test/test.cpp.o
 .PHONY : test/test.cpp.o
 
 test/test.i: test/test.cpp.i
@@ -273,7 +273,7 @@ test/test.i: test/test.cpp.i
 
 # target to preprocess a source file
 test/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBuffer.dir/build.make CMakeFiles/RingBuffer.dir/test/test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBufferTest.dir/build.make CMakeFiles/RingBufferTest.dir/test/test.cpp.i
 .PHONY : test/test.cpp.i
 
 test/test.s: test/test.cpp.s
@@ -281,7 +281,7 @@ test/test.s: test/test.cpp.s
 
 # target to generate assembly for a file
 test/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBuffer.dir/build.make CMakeFiles/RingBuffer.dir/test/test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RingBufferTest.dir/build.make CMakeFiles/RingBufferTest.dir/test/test.cpp.s
 .PHONY : test/test.cpp.s
 
 # Help Target
@@ -297,7 +297,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... RingBuffer"
+	@echo "... RingBufferTest"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"

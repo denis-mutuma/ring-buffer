@@ -1,59 +1,82 @@
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "../include/ring_buffer.h"
 
-Ring_Buffer *createBuffer(const uint32_t size)
+void InitBuffer(RingBuffer *ring_buffer, uint8_t *data, size_t capacity)
 {
-    Ring_Buffer *ring_buffer = (Ring_Buffer *)malloc(sizeof(Ring_Buffer) + size * sizeof(uint32_t));
-    if (ring_buffer == NULL)
+    ring_buffer->head = 0;
+    ring_buffer->tail = 0;
+    ring_buffer->capacity = capacity;
+    ring_buffer->length = 0;
+    ring_buffer->data = data;
+    return;
+}
+
+void ReadBuffer(RingBuffer *_this, RingBufferValue *result)
+{
+    if (IsBufferEmpty(_this))
     {
-        return NULL;
+        result->value = 0;
+        result->is_valid = false;
+        return;
+    }
+    result->value = _this->data[_this->tail];
+    result->is_valid = true;
+    _this->tail = (_this->tail + 1) % _this->capacity;
+    _this->length--;
+    return;
+}
+
+bool WriteBuffer(RingBuffer *_this, const uint8_t data)
+{
+    if (IsBufferFull(_this))
+    {
+        return false;
+    }
+    _this->data[_this->head] = data;
+    _this->length++;
+    if (IsBufferFull(_this))
+    {
+        return true;
+    }
+    _this->head = (_this->head + 1) % _this->capacity;
+
+    return true;
+}
+
+size_t GetBufferLength(const RingBuffer *ring_buffer)
+{
+    return ring_buffer->length;
+}
+
+size_t GetReadIndex(const RingBuffer *ring_buffer)
+{
+    return ring_buffer->tail;
+}
+
+size_t GetWriteIndex(const RingBuffer *ring_buffer)
+{
+    return ring_buffer->head;
+}
+
+bool IsBufferFull(const RingBuffer *_this)
+{
+    return _this->length == _this->capacity;
+}
+
+bool IsBufferEmpty(const RingBuffer *_this)
+{
+    return _this->head == _this->tail;
+}
+
+void Reset(RingBuffer *ring_buffer)
+{
+    for (size_t i = 0; i < ring_buffer->capacity; i++)
+    {
+        ring_buffer->data[i] = 0;
     }
     ring_buffer->head = 0;
     ring_buffer->tail = 0;
-    ring_buffer->size = size;
-    ring_buffer->isFull = 0;
-    return ring_buffer;
-}
-
-uint32_t push(Ring_Buffer *_this, uint32_t data)
-{
-    if (isFull(_this))
-    {
-        return -1;
-    }
-    _this->Buffer[_this->head] = data;
-    _this->head = (_this->head + 1) % _this->size;
-    if (_this->head == _this->tail)
-    {
-        _this->isFull = 1;
-    }
-    return 0;
-}
-
-uint32_t pop(Ring_Buffer *_this)
-{
-    if (isEmpty(_this))
-    {
-        return -1;
-    }
-    uint32_t val = _this->Buffer[_this->tail];
-    _this->tail = (_this->tail + 1) % _this->size;
-    _this->isFull = 0;
-    return val;
-}
-
-uint32_t isFull(Ring_Buffer *_this)
-{
-    return _this->isFull;
-}
-
-uint32_t isEmpty(Ring_Buffer *_this)
-{
-    uint32_t temp = 0;
-    if (_this->head == _this->tail && !isFull(_this))
-    {
-        temp = 1;
-    }
-    return temp;
+    ring_buffer->length = 0;
 }

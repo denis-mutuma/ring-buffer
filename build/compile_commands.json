@@ -1,12 +1,12 @@
 [
 {
   "directory": "/home/mutuma/embedded_systems/ring-buffer/build",
-  "command": "/usr/bin/g++  -I/home/mutuma/embedded_systems/ring-buffer/include -isystem /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest/include -isystem /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest -g -o CMakeFiles/RingBuffer.dir/test/test.cpp.o -c /home/mutuma/embedded_systems/ring-buffer/test/test.cpp",
+  "command": "/usr/bin/g++  -I/home/mutuma/embedded_systems/ring-buffer/include -isystem /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest/include -isystem /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest -g -o CMakeFiles/RingBufferTest.dir/test/test.cpp.o -c /home/mutuma/embedded_systems/ring-buffer/test/test.cpp",
   "file": "/home/mutuma/embedded_systems/ring-buffer/test/test.cpp"
 },
 {
   "directory": "/home/mutuma/embedded_systems/ring-buffer/build",
-  "command": "/usr/bin/gcc  -I/home/mutuma/embedded_systems/ring-buffer/include -isystem /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest/include -isystem /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest -g -std=gnu99 -o CMakeFiles/RingBuffer.dir/src/ring_buffer.c.o -c /home/mutuma/embedded_systems/ring-buffer/src/ring_buffer.c",
+  "command": "/usr/bin/gcc  -I/home/mutuma/embedded_systems/ring-buffer/include -isystem /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest/include -isystem /home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-src/googletest -g -std=gnu99 -o CMakeFiles/RingBufferTest.dir/src/ring_buffer.c.o -c /home/mutuma/embedded_systems/ring-buffer/src/ring_buffer.c",
   "file": "/home/mutuma/embedded_systems/ring-buffer/src/ring_buffer.c"
 },
 {

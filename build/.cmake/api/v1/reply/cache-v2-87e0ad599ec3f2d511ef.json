@@ -1131,7 +1131,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "RingBuffer"
+			"value" : "RingBufferTest"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1594,6 +1594,30 @@
 			"value" : "ON"
 		},
 		{
+			"name" : "RingBufferTest_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/mutuma/embedded_systems/ring-buffer/build"
+		},
+		{
+			"name" : "RingBufferTest_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/mutuma/embedded_systems/ring-buffer"
+		},
+		{
 			"name" : "RingBuffer_BINARY_DIR",
 			"properties" : 
 			[
@@ -1892,6 +1916,30 @@
 			],
 			"type" : "STATIC",
 			"value" : "general;gtest;"
+		},
+		{
+			"name" : "ring_buffer_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/mutuma/embedded_systems/ring-buffer/build"
+		},
+		{
+			"name" : "ring_buffer_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/mutuma/embedded_systems/ring-buffer"
 		},
 		{
 			"name" : "targets_export_name",

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(RingBuffer)
+project(RingBufferTest)
 
 # GoogleTest requires at least C++14
 set(CMAKE_C_STANDARD 99)
@@ -17,17 +17,17 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-  RingBuffer
+  RingBufferTest
   test/test.cpp
   src/ring_buffer.c
 )
 
-target_include_directories(RingBuffer PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(RingBufferTest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 target_link_libraries(
-  RingBuffer
+  RingBufferTest
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(RingBuffer)
+gtest_discover_tests(RingBufferTest)

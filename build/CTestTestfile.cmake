@@ -4,5 +4,5 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-include("/home/mutuma/embedded_systems/ring-buffer/build/RingBuffer[1]_include.cmake")
+include("/home/mutuma/embedded_systems/ring-buffer/build/RingBufferTest[1]_include.cmake")
 subdirs("_deps/googletest-build")

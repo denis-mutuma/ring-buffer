@@ -86,7 +86,7 @@
 					[
 						0
 					],
-					"name" : "RingBuffer",
+					"name" : "RingBufferTest",
 					"targetIndexes" : 
 					[
 						0
@@ -139,9 +139,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "RingBuffer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-RingBuffer-Debug-1370e17533d6c7008026.json",
-					"name" : "RingBuffer",
+					"id" : "RingBufferTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RingBufferTest-Debug-aa68dec9c1a11603e16a.json",
+					"name" : "RingBufferTest",
 					"projectIndex" : 0
 				},
 				{

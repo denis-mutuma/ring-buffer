@@ -3,6 +3,7 @@
         "ring_buffer.h": "c",
         "stdint.h": "c",
         "ostream": "cpp",
-        "cstddef": "cpp"
+        "cstddef": "cpp",
+        "stdbool.h": "c"
     }
 }

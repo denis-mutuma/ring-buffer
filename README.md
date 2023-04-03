@@ -12,7 +12,6 @@ This buffer is designed for use in microcontrollers but can be modified for use 
 
 ## Built with:
  - C
- - C++
  - CMake
 
 # Getting Started
@@ -20,7 +19,6 @@ This buffer is designed for use in microcontrollers but can be modified for use 
 ## Prerequisites  
 
 - `C` compiler
-- `C++` compiler that supports at least `C++ 14` standard
 
 ## Installation
 1. Clone the repo with
@@ -33,16 +31,44 @@ git clone https://github.com/denis-mutuma/ring-buffer.git
    -  `cmake ..`
    -  `cmake --build .`
 
-3. If make changes to the source code, write custom unit tests, repeat step 2 and run the tests with `ctest --verbose`
+3. If make changes to the source code, write custom unit tests, repeat step 2 and run the tests with by running the executable `RingBuffer` in the `build` folder. 
 
 # Usage
 
-- Create a ring buffer in your source code using `InitBuffer(RingBuffer *ring_buffer, uint8_t *data, size_t capacity)`
-- Add or remove elements to the buffer accordingly
+```
+// Create a ring buffer of a specified size e.g., 128
+RingBuffer *buffer = CreateRingBuffer(128);
 
-> NOTE: No need to perform memory cleanup as no allocations have been made on the heap.
+// Create a ring buffer result
+RingBufferResult *result = CreateRingBufferResult();
 
-You can use the library as it is or you can modify it. For instance you can modify the buffer to store `uint16_t` data as follows:
+// Insert elements to the buffer
+// If buffer is full, WriteBuffer will return false and the data to be written is discarded
+
+uint_8 my_data[data_size];
+for(int i = 0; i < data_size; i++) {
+    if(!WriteBuffer(buffer, some_value)){
+        // print an error or handle the failure by terminating the write
+    }
+}
+
+// Read from the buffer
+ReadBuffer(buffer, result);
+
+// check that the resul is valid
+if(result->is_valid) {
+    // do something with the result->value
+} else {
+    // handle the invalid case when buffer is empty
+}
+
+// cleanup by deleting the buffer and the buffer result
+DeleteRingBuffer(buffer);
+DeleteRingBufferResult(result);
+```
+
+
+You can use the library as it is or you can modify it. For instance you can modify the buffer to store `uint16_t` or any other data type as follows:
 
 Change the `data` field of the ring buffer struct:
 ```
@@ -64,7 +90,7 @@ to:
         size_t tail;
         size_t capacity;
         size_t length;
-        uint8_t *data;
+        uint16_t *data;
     } RingBuffer;
 ```
 

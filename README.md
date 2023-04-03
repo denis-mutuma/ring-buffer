@@ -31,7 +31,7 @@ git clone https://github.com/denis-mutuma/ring-buffer.git
    -  `cmake ..`
    -  `cmake --build .`
 
-3. If make changes to the source code, write custom unit tests, repeat step 2 and run the tests with by running the executable `RingBuffer` in the `build` folder. 
+3. If you make changes to the source code, write custom unit tests, repeat step 2 and run the tests with by running the executable `RingBuffer` in the `build` folder. In this project, the [Unity](https://github.com/ThrowTheSwitch/Unity) testing framework was used. You can download it and uzip it in the `test/lib/Unity` folder.
 
 # Usage
 

@@ -195,7 +195,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=RingBufferTest
+CMAKE_PROJECT_NAME:STATIC=RingBuffer
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=1.12.1
@@ -314,6 +314,12 @@ RingBuffer_BINARY_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer/build
 //Value Computed by CMake
 RingBuffer_SOURCE_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer
 
+//Compiles Unity with the "fixture" extension.
+UNITY_EXTENSION_FIXTURE:BOOL=OFF
+
+//Compiles Unity with the "memory" extension.
+UNITY_EXTENSION_MEMORY:BOOL=OFF
+
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer/build/_deps/googletest-build/googlemock
 
@@ -365,6 +371,12 @@ ring_buffer_BINARY_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer/build
 
 //Value Computed by CMake
 ring_buffer_SOURCE_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer
+
+//Value Computed by CMake
+unity_BINARY_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer/build/test/Unity
+
+//Value Computed by CMake
+unity_SOURCE_DIR:STATIC=/home/mutuma/embedded_systems/ring-buffer/test/Unity
 
 
 ########################
@@ -507,7 +519,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

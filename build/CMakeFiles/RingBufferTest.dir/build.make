@@ -69,19 +69,19 @@ include CMakeFiles/RingBufferTest.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/RingBufferTest.dir/flags.make
 
-CMakeFiles/RingBufferTest.dir/test/test.cpp.o: CMakeFiles/RingBufferTest.dir/flags.make
-CMakeFiles/RingBufferTest.dir/test/test.cpp.o: ../test/test.cpp
-CMakeFiles/RingBufferTest.dir/test/test.cpp.o: CMakeFiles/RingBufferTest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RingBufferTest.dir/test/test.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RingBufferTest.dir/test/test.cpp.o -MF CMakeFiles/RingBufferTest.dir/test/test.cpp.o.d -o CMakeFiles/RingBufferTest.dir/test/test.cpp.o -c /home/mutuma/embedded_systems/ring-buffer/test/test.cpp
+CMakeFiles/RingBufferTest.dir/test/test.c.o: CMakeFiles/RingBufferTest.dir/flags.make
+CMakeFiles/RingBufferTest.dir/test/test.c.o: ../test/test.c
+CMakeFiles/RingBufferTest.dir/test/test.c.o: CMakeFiles/RingBufferTest.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/RingBufferTest.dir/test/test.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/RingBufferTest.dir/test/test.c.o -MF CMakeFiles/RingBufferTest.dir/test/test.c.o.d -o CMakeFiles/RingBufferTest.dir/test/test.c.o -c /home/mutuma/embedded_systems/ring-buffer/test/test.c
 
-CMakeFiles/RingBufferTest.dir/test/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RingBufferTest.dir/test/test.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mutuma/embedded_systems/ring-buffer/test/test.cpp > CMakeFiles/RingBufferTest.dir/test/test.cpp.i
+CMakeFiles/RingBufferTest.dir/test/test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RingBufferTest.dir/test/test.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mutuma/embedded_systems/ring-buffer/test/test.c > CMakeFiles/RingBufferTest.dir/test/test.c.i
 
-CMakeFiles/RingBufferTest.dir/test/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RingBufferTest.dir/test/test.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mutuma/embedded_systems/ring-buffer/test/test.cpp -o CMakeFiles/RingBufferTest.dir/test/test.cpp.s
+CMakeFiles/RingBufferTest.dir/test/test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RingBufferTest.dir/test/test.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mutuma/embedded_systems/ring-buffer/test/test.c -o CMakeFiles/RingBufferTest.dir/test/test.c.s
 
 CMakeFiles/RingBufferTest.dir/src/ring_buffer.c.o: CMakeFiles/RingBufferTest.dir/flags.make
 CMakeFiles/RingBufferTest.dir/src/ring_buffer.c.o: ../src/ring_buffer.c
@@ -99,21 +99,18 @@ CMakeFiles/RingBufferTest.dir/src/ring_buffer.c.s: cmake_force
 
 # Object files for target RingBufferTest
 RingBufferTest_OBJECTS = \
-"CMakeFiles/RingBufferTest.dir/test/test.cpp.o" \
+"CMakeFiles/RingBufferTest.dir/test/test.c.o" \
 "CMakeFiles/RingBufferTest.dir/src/ring_buffer.c.o"
 
 # External object files for target RingBufferTest
 RingBufferTest_EXTERNAL_OBJECTS =
 
-RingBufferTest: CMakeFiles/RingBufferTest.dir/test/test.cpp.o
+RingBufferTest: CMakeFiles/RingBufferTest.dir/test/test.c.o
 RingBufferTest: CMakeFiles/RingBufferTest.dir/src/ring_buffer.c.o
 RingBufferTest: CMakeFiles/RingBufferTest.dir/build.make
-RingBufferTest: lib/libgtest_main.a
-RingBufferTest: lib/libgtest.a
 RingBufferTest: CMakeFiles/RingBufferTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable RingBufferTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable RingBufferTest"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RingBufferTest.dir/link.txt --verbose=$(VERBOSE)
-	/usr/local/bin/cmake -D TEST_TARGET=RingBufferTest -D TEST_EXECUTABLE=/home/mutuma/embedded_systems/ring-buffer/build/RingBufferTest -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/mutuma/embedded_systems/ring-buffer/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=RingBufferTest_TESTS -D CTEST_FILE=/home/mutuma/embedded_systems/ring-buffer/build/RingBufferTest[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/local/share/cmake-3.20/Modules/GoogleTestAddTests.cmake
 
 # Rule to build all files generated by this target.
 CMakeFiles/RingBufferTest.dir/build: RingBufferTest

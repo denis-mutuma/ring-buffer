@@ -97,7 +97,7 @@ void test_RingBufferReset(void)
 
     RingBufferReset(buffer);
 
-    for (int i = 0; i < buffer->capacity; ++i)
+    for (size_t i = 0; i < buffer->capacity; ++i)
     {
         TEST_ASSERT_EQUAL_INT(buffer->data[i], 0);
     }
@@ -112,5 +112,6 @@ int main(void)
     RUN_TEST(test_WriteRingBuffer);
     RUN_TEST(test_ReadRingBuffer);
     RUN_TEST(test_CreateRingBufferResult);
+
     return UNITY_END();
 }

@@ -67,7 +67,7 @@ if(result->is_valid) {
     // handle the invalid case when buffer is empty
 }
 
-// cleanup by deleting the buffer and the buffer result
+// cleanup by deleting the buffer and the buffer result to avoid memory leaks
 DeleteRingBuffer(buffer);
 DeleteRingBufferResult(result);
 ```
@@ -75,7 +75,7 @@ DeleteRingBufferResult(result);
 
 You can use the library as it is or you can modify it. For instance you can modify the buffer to store `uint16_t` or any other data type as follows:
 
-Change the `data` field of the ring buffer struct:
+Change the `data` field of the `RingBuffer` struct:
 ```
     typedef struct
     {

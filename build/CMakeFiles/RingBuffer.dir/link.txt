@@ -1,1 +1,0 @@
-/usr/bin/gcc -g CMakeFiles/RingBuffer.dir/src/ring_buffer.c.o CMakeFiles/RingBuffer.dir/test/test.c.o -o RingBuffer  libunity.a 

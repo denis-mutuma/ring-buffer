@@ -1,4 +1,0 @@
-/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/rebuild_cache.dir
-/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/edit_cache.dir
-/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/RingBuffer.dir
-/home/mutuma/embedded_systems/ring-buffer/build/CMakeFiles/unity.dir

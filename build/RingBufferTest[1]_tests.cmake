@@ -1,7 +1,0 @@
-add_test( RingBufferTest.InitBufferWorks /home/mutuma/embedded_systems/ring-buffer/build/RingBufferTest [==[--gtest_filter=RingBufferTest.InitBufferWorks]==] --gtest_also_run_disabled_tests)
-set_tests_properties( RingBufferTest.InitBufferWorks PROPERTIES WORKING_DIRECTORY /home/mutuma/embedded_systems/ring-buffer/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test( RingBufferTest.WriteBufferWorks /home/mutuma/embedded_systems/ring-buffer/build/RingBufferTest [==[--gtest_filter=RingBufferTest.WriteBufferWorks]==] --gtest_also_run_disabled_tests)
-set_tests_properties( RingBufferTest.WriteBufferWorks PROPERTIES WORKING_DIRECTORY /home/mutuma/embedded_systems/ring-buffer/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test( RingBufferTest.ReadBufferWorks /home/mutuma/embedded_systems/ring-buffer/build/RingBufferTest [==[--gtest_filter=RingBufferTest.ReadBufferWorks]==] --gtest_also_run_disabled_tests)
-set_tests_properties( RingBufferTest.ReadBufferWorks PROPERTIES WORKING_DIRECTORY /home/mutuma/embedded_systems/ring-buffer/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set( RingBufferTest_TESTS RingBufferTest.InitBufferWorks RingBufferTest.WriteBufferWorks RingBufferTest.ReadBufferWorks)

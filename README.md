@@ -1,4 +1,4 @@
-# Ring Buffer
+# Ring Buffer for Embedded Systems
 
 # About the project
 
@@ -39,6 +39,11 @@ git clone https://github.com/denis-mutuma/ring-buffer.git
 // Create a ring buffer of a specified size e.g., 128
 RingBuffer *buffer = CreateRingBuffer(128);
 
+// Check that the ring buffer was created, if not handle the issue by e.g., reducing the buffer size
+if(!buffer) {
+    // handle the issue
+}
+
 // Create a ring buffer result
 RingBufferResult *result = CreateRingBufferResult();
 
@@ -55,7 +60,7 @@ for(int i = 0; i < data_size; i++) {
 // Read from the buffer
 ReadBuffer(buffer, result);
 
-// check that the resul is valid
+// Verify that the result is valid
 if(result->is_valid) {
     // do something with the result->value
 } else {
@@ -93,6 +98,7 @@ to:
         uint16_t *data;
     } RingBuffer;
 ```
+> **Note:** You'll also need to update various functions to match the desired type.
 
 # Contributing
 

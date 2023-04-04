@@ -6,7 +6,17 @@
 RingBuffer *CreateRingBuffer(size_t capacity)
 {
     RingBuffer *buffer = (RingBuffer *)malloc(sizeof(RingBuffer));
-    buffer->data = malloc(sizeof(uint8_t) * capacity);
+
+    if (!buffer)
+    {
+        return NULL;
+    }
+
+    buffer->data = calloc(capacity, sizeof(uint8_t));
+    if (!buffer->data)
+    {
+        return NULL;
+    }
 
     buffer->head = 0;
     buffer->tail = 0;
@@ -31,6 +41,7 @@ void DeleteRingBuffer(RingBuffer *buffer)
 RingBufferResult *CreateRingBufferResult()
 {
     RingBufferResult *result = (RingBufferResult *)malloc(sizeof(RingBufferResult));
+
     result->is_valid = false;
     result->value = 0;
     return result;
